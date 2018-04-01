@@ -1,0 +1,28 @@
+The employee portal contains the REST services made using Spring Boot, and the front-end consists of Angular JS
+
+The REST service:
+*It uses Spring Boot, MVC design pattern, and an HSQL embeded database, also it uses JDBC to connect to it.
+*The whole thing is deployed on Apache Tomcat
+*To access the HSQL database, you can go to http://localhost:8080/h2, username is root, and passoword is root
+*Just run the application to start the rest service
+
+Front-END:
+*It consists of 2 modules: User Module and Employee Module
+*The User module has 4 components including home,login and register
+*The Employee module has 2 components including employee-display-all and emp-display
+*The user-routing-module routes all paths to the app.module
+
+Connection:
+*The front-end is connected with the rest service using a CORS configuration file in Java
+*Also the node server is started with a proxy.config file which makes it listen to the target port
+
+To start:
+just go to the directory and run this command in cmd:
+java -jar target\employee_portal-0.0.1-SNAPSHOT.jar
+This will start the REST services
+
+Now do a npm install for front-end, and then npm start with run the angular
+
+Not you can just go to http://localhost:4200/ to run the application
+
+

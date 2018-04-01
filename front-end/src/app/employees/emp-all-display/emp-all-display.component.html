@@ -1,0 +1,37 @@
+
+<form #values="ngForm" (ngSubmit)="values.form.valid && sortEmpBy(values)">
+  <div class="form-group">
+    <select class="form-control form-control-sm" required name="select" ngModel>
+      <option value="hireDate">Hire Date</option>
+      <option value="name">Name</option>
+      <option value="salary">Salary</option>
+    </select>
+    <div *ngIf="values.submited && !select.valid" class="help-block" style="color:red">Select is required</div>
+    <input class="" type="radio" name="order" value="asc" id="asc" ngModel />
+    <label>Ascending</label>
+    <input class="" type="radio" name="order" value="desc" id="desc" ngModel />
+    <label>Descending</label>
+    <button type="submit">Sort</button>
+  </div>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Hire Date</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Department</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let emp of employees" (click)="viewEmp(emp)">
+        <td>{{emp.id}}</td>
+        <td>{{emp.fname}} {{emp.lname}}</td>
+        <td>{{emp.hireDate}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.department}}</td>
+      </tr>
+  </tbody>
+</table>

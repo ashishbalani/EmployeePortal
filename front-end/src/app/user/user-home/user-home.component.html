@@ -1,0 +1,8 @@
+<div>
+
+<div>
+  <app-nav></app-nav>
+  <br />
+  <emp-all-display (viewChange)="changeView($event)" *ngIf="viewAll"></emp-all-display>
+  <emp-display  (viewChange)="changeView($event)" *ngIf="!viewAll"></emp-display>
+</div>
